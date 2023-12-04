@@ -3,7 +3,7 @@ export default function Home() {
         <>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="logo.jpg"/></a>
+            <a class="navbar-brand" href="#"><img src="../logo.jpg"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,20 +20,17 @@ export default function Home() {
                     Meet the team!
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="meet-us/eli">Eli</a></li>
-                    <li><a class="dropdown-item" href="meet-us/bradley">Bradley</a></li>
-                    <li><a class="dropdown-item" href="meet-us/rayne">Rayne</a></li>
-                    <li><a class="dropdown-item" href="meet-us/anthony">Anthony</a></li>
+                    <li><a class="dropdown-item" href="#">Eli</a></li>
+                    <li><a class="dropdown-item" href="#">Bradley</a></li>
+                    <li><a class="dropdown-item" href="#">Rayne</a></li>
+                    <li><a class="dropdown-item" href="#">Anthony</a></li>
                 </ul>
                 </li>
             </ul>
             </div>
             </div>
         </nav>
-        <h1>Welcome to MemorEase!</h1>
-        <h2>A study tool made by students, for students.</h2>
-        <a class="btn btn-primary btn-lg" href="login" role="button">Log In</a>
-        <a class="btn btn-secondary btn-lg" href="signup" role="button">Sign Up</a>
+        <h1>You are on Anthony's biography.</h1>
         </>
     )
 }

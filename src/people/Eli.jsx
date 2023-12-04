@@ -3,7 +3,7 @@ export default function Home() {
         <>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="logo.jpg"/></a>
+            <a class="navbar-brand" href="#"><img src="../logo.jpg"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,10 +30,7 @@ export default function Home() {
             </div>
             </div>
         </nav>
-        <h1>Welcome to MemorEase!</h1>
-        <h2>A study tool made by students, for students.</h2>
-        <a class="btn btn-primary btn-lg" href="login" role="button">Log In</a>
-        <a class="btn btn-secondary btn-lg" href="signup" role="button">Sign Up</a>
+        <h1>You are on Eli's biography.</h1>
         </>
     )
 }
