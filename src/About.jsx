@@ -20,10 +20,10 @@ export default function About() {
                     Meet the team!
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Eli</a></li>
-                    <li><a class="dropdown-item" href="#">Bradley</a></li>
-                    <li><a class="dropdown-item" href="#">Rayne</a></li>
-                    <li><a class="dropdown-item" href="#">Anthony</a></li>
+                    <li><a class="dropdown-item" href="meet-us/eli">Eli</a></li>
+                    <li><a class="dropdown-item" href="meet-us/bradley">Bradley</a></li>
+                    <li><a class="dropdown-item" href="meet-us/rayne">Rayne</a></li>
+                    <li><a class="dropdown-item" href="meet-us/anthony">Anthony</a></li>
                 </ul>
                 </li>
             </ul>

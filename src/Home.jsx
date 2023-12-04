@@ -30,8 +30,9 @@ export default function Home() {
             </div>
             </div>
         </nav>
-        <h1>Welcome to MemorEase!</h1>
-        <h2>A study tool made by students, for students.</h2>
+        <br/><br/><br/><br/><br/>
+        <h1 class="text-center">Welcome to MemorEase!</h1>
+        <h2 class="text-center">A study tool made by students, for students.</h2>
         <a class="btn btn-primary btn-lg" href="login" role="button">Log In</a>
         <a class="btn btn-secondary btn-lg" href="signup" role="button">Sign Up</a>
         </>

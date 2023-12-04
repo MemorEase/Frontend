@@ -20,10 +20,10 @@ export default function Home() {
                     Meet the team!
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="meet-us/eli">Eli</a></li>
-                    <li><a class="dropdown-item" href="meet-us/bradley">Bradley</a></li>
-                    <li><a class="dropdown-item" href="meet-us/rayne">Rayne</a></li>
-                    <li><a class="dropdown-item" href="meet-us/anthony">Anthony</a></li>
+                    <li><a class="dropdown-item" href="eli">Eli</a></li>
+                    <li><a class="dropdown-item" href="bradley">Bradley</a></li>
+                    <li><a class="dropdown-item" href="rayne">Rayne</a></li>
+                    <li><a class="dropdown-item" href="anthony">Anthony</a></li>
                 </ul>
                 </li>
             </ul>
