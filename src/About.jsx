@@ -15,22 +15,17 @@ export default function About() {
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="about">About</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Meet the team!
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="meet-us/eli">Eli</a></li>
-                    <li><a class="dropdown-item" href="meet-us/bradley">Bradley</a></li>
-                    <li><a class="dropdown-item" href="meet-us/rayne">Rayne</a></li>
-                    <li><a class="dropdown-item" href="meet-us/anthony">Anthony</a></li>
-                </ul>
-                </li>
             </ul>
             </div>
             </div>
         </nav>
-        <h1>You are on the about page.</h1>
+        <br/><br/><br/>
+        <h2 class="text-center">At MemorEase, we believe that <em>every</em> student should have a fun time when studying.</h2><br/><br/>
+        <h3 class="text-center">We have worked to not only build a flashcard app that allows students to retain what they've learned, but we have also incorporated API into our website.</h3>
+        <h1>About Us</h1>
+        <h1>Tech Stack</h1>
+        <h1>Key Features</h1>
+        <h1>Challenges</h1>
         </>
     )
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Study Sets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="study-sets-container">
+        <h2>My Study Sets</h2>
+        <ul id="study-sets">
+            <!-- Dynamically added study set entries will go here -->
+        </ul>
+        <button id="create-set-button" class="create-button">Create New Study Set</button>
+    </div>
+
+    <div id="create-set-form" class="form-container" style="display:none;">
+        <input type="text" id="set-title" class="input-field" placeholder="Title" required>
+        <textarea id="set-description" class="input-field" placeholder="Add a description..."></textarea>
+        <div id="term-definition-container"></div>
+        <button type="button" id="add-card-button" class="form-button">Add Card</button>
+        <button id="save-set-button" class="form-button" style="display:none;">Save Set</button>
+        <button id="done-button" class="form-button" style="display:none;">Done</button>
+    </div>
+
+    <div id="flashcards-container" class="study-set">
+        <!-- Flashcards will be added here -->
+    </div>
+
+    <script src="study_sets.js"></script>
+</body>
+</html>

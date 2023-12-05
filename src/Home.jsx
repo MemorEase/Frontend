@@ -1,3 +1,81 @@
+import React, { useEffect, useState} from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from './firebase'
+
+auth.onAuthStateChanged((user) => { 
+    if (user) { 
+        console.log("User Signed In"); 
+        var uid = user.uid; 
+        console.log(uid);
+    } else { 
+        console.log("User Signed Out"); 
+        // ... 
+    } 
+});
+
+const AuthNavBar = () => {
+    const [authUser, setAuthUser] = useState(null);
+    useEffect(() => {
+        const listen = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setAuthUser(user)
+            } else {
+                setAuthUser(null);
+            }
+        })
+    }, [])
+
+    return (
+        authUser ? 
+        <>
+            <li class="nav-item">
+                <a class="nav-link" href="cards">Cards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about">I'm Feeling Studious</a>
+            </li>
+        </>
+         : <p></p>
+    )
+}
+
+const AuthBody = () => {
+    const [authUser, setAuthUser] = useState(null);
+    useEffect(() => {
+        const listen = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setAuthUser(user)
+            } else {
+                setAuthUser(null);
+            }
+        })
+    }, [])
+
+    return (
+        authUser ? 
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">You are signed in!</h1>
+                    <button class="text-center btn btn-primary btn-lg" onClick={() => SignOut()}>Sign Out</button>
+                </div>
+            </div>
+        </div>
+         :
+         <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Welcome to MemorEase!</h1>
+                    <h2 class="text-center">A study tool made by students, for students.</h2>
+                    <h3 class="text-center">Start your learning journey <b>today.</b></h3>
+                    <a class="text-center btn btn-primary btn-lg" href="login" role="button">Log In</a><br/>
+                    <a class="btn btn-secondary btn-lg" href="signup" role="button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 export default function Home() {
     return (
         <>
@@ -15,26 +93,25 @@ export default function Home() {
                 <li class="nav-item">
                 <a class="nav-link" href="about">About</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Meet the team!
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="meet-us/eli">Eli</a></li>
-                    <li><a class="dropdown-item" href="meet-us/bradley">Bradley</a></li>
-                    <li><a class="dropdown-item" href="meet-us/rayne">Rayne</a></li>
-                    <li><a class="dropdown-item" href="meet-us/anthony">Anthony</a></li>
-                </ul>
-                </li>
+                <AuthNavBar />
             </ul>
             </div>
             </div>
         </nav>
-        <br/><br/><br/><br/><br/>
-        <h1 class="text-center">Welcome to MemorEase!</h1>
-        <h2 class="text-center">A study tool made by students, for students.</h2>
-        <a class="btn btn-primary btn-lg" href="login" role="button">Log In</a>
-        <a class="btn btn-secondary btn-lg" href="signup" role="button">Sign Up</a>
+
+        <AuthBody />
+
         </>
     )
+}
+
+function SignOut() {
+    console.log('SignOut function is called');
+    auth.signOut()
+        .then(() => {
+            console.log('Signed Out');
+        })
+        .catch(e => {
+            console.error('Sign Out Error', e);
+        });
 }

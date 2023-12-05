@@ -1,0 +1,224 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+.study-sets-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+
+.study-set {
+    background: #f0f0f0; /* Lighter gray background */
+    border: 1px solid #fff; /* White border */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+}
+
+
+.flashcard {
+    background: #f0f0f0; /* Lighter gray background */
+    border: 1px solid #fff; /* White border */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    perspective: 1000px;
+    height: 200px;
+}
+
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+
+.flashcard.is-flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+
+.flashcard-back {
+    transform: rotateY(180deg);
+    background-color: #fff;
+    color: #333; /* Dark text color */
+}
+
+
+.create-button {
+    background-color: #2ecc71; /* Green background for Create New Study Set button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.form-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.delete-button img {
+    width: 24px;
+    height: 24px;
+    fill: #ff4d4d; /* Red color for trash can icon */
+}
+
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.input-container input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 80%;
+}
+/* Style for the "Edit Set" button */
+.edit-set-button {
+    background-color: #3498db; /* Blue background */
+    color: white; /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px; /* Add some margin to separate it from other buttons */
+}
+
+
+/* Style for the set name */
+.study-set-button {
+    background-color: #2ecc71; /* Green background */
+    color: white; /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px; /* Add some margin to separate it from other buttons */
+}
+
+
+/* Hover effect for buttons */
+.edit-set-button:hover,
+.study-set-button:hover {
+    background-color: #333; /* Darker color on hover */
+}
+
+
+/* Hover effect for buttons */
+.create-button:hover,
+.edit-set-button:hover,
+.delete-set-button:hover,
+.study-set-button:hover {
+    background-color: #555; /* Darker color on hover */
+}
+/* Adjustments for better aesthetics */
+.create-button, .form-button, .edit-set-button, .study-set-button {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Style adjustments for delete button */
+.delete-set-button {
+    background-color: #e74c3c; /* Red background */
+    color: white; /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px; /* Add some margin to separate it from other buttons */
+}
+
+
+.delete-set-button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+
+/* Adjustments for Done button */
+#done-button {
+    background-color: #3498db; /* Blue background */
+    color: white; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block; /* Make it a block element to fill container */
+    margin: 20px auto; /* Center it */
+}
+
+
+#done-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
