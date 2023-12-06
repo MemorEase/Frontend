@@ -1,3 +1,45 @@
+import React, { useEffect, useState} from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../firebase';
+
+auth.onAuthStateChanged((user) => { 
+    if (user) { 
+        console.log("User Signed In"); 
+        var uid = user.uid; 
+        console.log(uid);
+    } else { 
+        console.log("User Signed Out"); 
+        // ... 
+    } 
+});
+
+const AuthNavBar = () => {
+    const [authUser, setAuthUser] = useState(null);
+    useEffect(() => {
+        const listen = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setAuthUser(user)
+            } else {
+                setAuthUser(null);
+            }
+        })
+    }, [])
+
+    return (
+        authUser ? 
+        <>
+            <li class="nav-item">
+                <a class="nav-link" href="sets">View Your Sets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="studious">I'm Feeling Studious</a>
+            </li>
+        </>
+         : <p></p>
+    )
+}
+
+
 export default function About() {
     return (
         <>
@@ -15,6 +57,7 @@ export default function About() {
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="about">About</a>
                 </li>
+                <AuthNavBar />
             </ul>
             </div>
             </div>

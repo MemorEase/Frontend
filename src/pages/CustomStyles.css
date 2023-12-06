@@ -1,0 +1,101 @@
+.input-term, .input-definition {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px #ddd;
+    font-size: 16px;
+  }
+  
+  .button-common {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .save-changes-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .add-new-card-btn {
+    background-color: #008CBA; 
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .back-to-menu-btn {
+    background-color: #e7e7e7;
+    color: black;
+  }
+  
+  .button-common:hover {
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-term:focus, .input-definition:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px 0 #4CAF50;
+  }
+  
+  .button-common:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  .button-common {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+  
+
+  .button-common:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+
+  .button-nav {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .button-nav:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 4px #004085;
+  }
+
+  .button-back {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .button-back:hover {
+    background-color: #5a6268;
+    box-shadow: 0 2px 4px #343a40;
+  }
+  
+  .button-read {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .button-read:hover {
+    background-color: #218838;
+    box-shadow: 0 2px 4px #1e7e34;
+  }

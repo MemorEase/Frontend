@@ -29,10 +29,19 @@ const AuthNavBar = () => {
         authUser ? 
         <>
             <li class="nav-item">
-                <a class="nav-link" href="cards">Cards</a>
+                <a class="nav-link" href="sets">View Your Sets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="about">I'm Feeling Studious</a>
+                <a class="nav-link" href="">I'm Feeling Studious</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Cards
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="sets">View Your Sets</a></li>
+                <li><a class="dropdown-item" href="addset">Create a Set</a></li>
+            </ul>
             </li>
         </>
          : <p></p>
@@ -56,7 +65,7 @@ const AuthBody = () => {
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">You are signed in!</h1>
+                    <br/><br/><br/><br/><br/><h1 class="text-center">You are signed in!</h1>
                     <button class="text-center btn btn-primary btn-lg" onClick={() => SignOut()}>Sign Out</button>
                 </div>
             </div>

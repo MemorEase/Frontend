@@ -1,0 +1,115 @@
+.flashcard-container {
+    perspective: 1000px;
+  }
+  
+  .flashcard {
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+  
+  .flashcard.is-flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .flashcard-front {
+    background: #007bff;
+  }
+  
+  .flashcard-back {
+    background: #ff5722;
+    transform: rotateY(180deg);
+  }
+
+  .back-to-menu-btn {
+    background-color: #e7e7e7;
+    color: black;
+  }
+  
+  .button-common:hover {
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-term:focus, .input-definition:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px 0 #4CAF50;
+  }
+  
+  .button-common:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  .button-common {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+  
+
+  .button-common:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+
+  .button-nav {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .button-nav:hover {
+    background-color: #0056b3;
+    box-shadow: 0 2px 4px #004085;
+  }
+
+  .button-back {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .button-back:hover {
+    background-color: #5a6268;
+    box-shadow: 0 2px 4px #343a40;
+  }
+  
+  .button-read {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .button-read:hover {
+    background-color: #218838;
+    box-shadow: 0 2px 4px #1e7e34;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; 
+  }
