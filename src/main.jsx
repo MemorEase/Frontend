@@ -12,12 +12,13 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
-import Home from './Home.jsx'
-import App from './App.jsx'
-import About from './About.jsx'
-import SignUp from './SignUp.jsx'
-import LogIn from './LogIn.jsx'
-//import Cards from './Cards.jsx'
+import Home from './pages/Home.jsx'
+import App from './pages/App.jsx'
+import About from './pages/About.jsx'
+import SignUp from './pages/SignUp.jsx'
+import LogIn from './pages/LogIn.jsx'
+import Studious from './pages/Studious.jsx'
+import Cards from './pages/Cards.jsx'
 
 
 const router = createBrowserRouter(
@@ -28,7 +29,8 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="login" element={<LogIn />} />
       <Route path="signup" element={<SignUp />} />
-
+      <Route path="cards" element={<Cards />} />
+      <Route path="studious" element={<Studious />} />
     </Route>
   )
 );
