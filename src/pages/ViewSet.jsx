@@ -67,7 +67,7 @@ function ViewSet() {
       <button className="button-common button-nav" onClick={handleNext} disabled={currentCardIndex === cards.length - 1}>Next</button>
       </div>
     <div class="button-container">
-    <button className="button-common button-back" onClick={() => navigate('/sets')}>Back to card menu (current changes will be discarded)</button>
+    <button className="button-common button-back" onClick={() => navigate('/')}>Back to card menu (current changes will be discarded)</button>
     <button className="button-common button-read" onClick={() => speakText(cards[currentCardIndex]?.key)}>Read term</button>
     <button className="button-common button-read" onClick={() => speakText(cards[currentCardIndex]?.value)}>Read definition</button>
     </div>

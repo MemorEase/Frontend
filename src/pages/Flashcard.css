@@ -1,3 +1,7 @@
+* {
+  font-weight: bold;
+}
+
 .flashcard-container {
     perspective: 1000px;
   }
@@ -31,11 +35,12 @@
   }
   
   .flashcard-front {
-    background: #007bff;
-  }
+    background: red;
+color: white;  }
   
   .flashcard-back {
-    background: #ff5722;
+    background: white;
+    color: red;
     transform: rotateY(180deg);
   }
 

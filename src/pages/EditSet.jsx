@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from "react-router-dom";
-
+import "./EditCard.css"
 
 function EditSet() {
   const location = useLocation();
@@ -10,15 +10,12 @@ function EditSet() {
   const getSetId = location.pathname.split("/")[2];
 
   const [cards, setCards] = useState([]);
-  const [cardChanges, setCardChanges] = useState({}); // State to track changes
+  const [cardChanges, setCardChanges] = useState({});
 
   useEffect(() => {
-    // Fetch data from the API
     axios.get('http://localhost:8800/cards/' + getSetId)
       .then(response => {
-        // Store the API data in the state variable
         setCards(response.data);
-        // Initialize cardChanges state with the original card values
         const initialChanges = {};
         response.data.forEach(card => {
           initialChanges[card.cardId] = { key: card.key, value: card.value };
@@ -26,11 +23,10 @@ function EditSet() {
         setCardChanges(initialChanges);
       })
       .catch(error => console.error('Error fetching data:', error));
-  }, [getSetId]); // Include getSetId in the dependency array
+  }, [getSetId]);
 
   const handleChange = (e, cardId, field) => {
     const value = e.target.value;
-    // Update the cardChanges state with the modified value
     setCardChanges(prev => ({
       ...prev,
       [cardId]: { ...prev[cardId], [field]: value }
@@ -39,62 +35,65 @@ function EditSet() {
 
   const saveChanges = async () => {
     try {
-      // Iterate through cardChanges and make PUT requests for each changed card
       for (const cardId in cardChanges) {
         const changedCard = cardChanges[cardId];
         await axios.put(`http://localhost:8800/cards/${cardId}`, changedCard);
       }
       console.log('Changes saved successfully');
+      window.location.reload();
     } catch (error) {
       console.error('Error saving changes:', error);
-      // Handle errors here
     }
   };
 
   const makeNewCard = async () => {
     try {
       const response = await axios.post("http://localhost:8800/cards", { setId: getSetId, key: "", value: "" });
-      setCards(prev => [...prev, response.data]); // Update cards state with the newly added card
+
+      setCards(prev => [...prev, response.data]);
+      window.location.reload();
     } catch (error) {
       console.error('Error adding new card:', error);
-      // Handle errors here
     }
   };
 
   const handleDelete = async (cardId) => {
     try {
       await axios.delete(`http://localhost:8800/cards/${cardId}`);
-      setCards(prev => prev.filter(card => card.cardId !== cardId)); // Update cards state after deletion
+      setCards(prev => prev.filter(card => card.cardId !== cardId));
     } catch (error) {
       console.error('Error deleting card:', error);
-      // Handle errors here
     }
   };
 
   return (
     <>
-      <div>
+      <div className="card-container">
         {cards.map((card, index) => (
           <div key={index}>
             <input
+              className="card-input"
               type="text"
               placeholder={card.key}
               value={cardChanges[card.cardId]?.key || ''}
               onChange={(e) => handleChange(e, card.cardId, 'key')}
             />
             <input
+              className="card-input"
               type="text"
               placeholder={card.value}
               value={cardChanges[card.cardId]?.value || ''}
               onChange={(e) => handleChange(e, card.cardId, 'value')}
             />
-            <button onClick={() => handleDelete(card.cardId)}>Delete</button>
+            <button className="btn-delete" onClick={() => handleDelete(card.cardId)}>Delete</button>
           </div>
         ))}
       </div>
-      <button onClick={makeNewCard}>Add new card</button>
-      <button onClick={saveChanges}>Save changes</button><br />
-      <button onClick={() => navigate(`/sets`)}>Back to card menu (current changes will be discarded)</button>
+      <div className="button-container">
+        <button className="btn-add" onClick={makeNewCard}>Add new card (current changes will be discarded)</button>
+        <button className="btn-save" onClick={saveChanges}>Save changes</button>
+        <button className="btn-back" onClick={() => navigate(`/`)}>Back to card menu (current changes will be discarded)</button>
+      </div>
     </>
   );
 }
