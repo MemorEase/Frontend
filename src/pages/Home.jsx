@@ -129,7 +129,7 @@ function RandWord() {
 
 const handleDelete = async (setId) => {
     try {
-        await axios.delete(`http://localhost:8800/sets/${setId}`)
+        await axios.delete(`https://memor-ease.onrender.com/sets/${setId}`)
         window.location.reload()
     }
     catch(err) {
@@ -167,7 +167,7 @@ const Add = () => {
     const handleSaveSet = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8800/sets", { userId: uid, setName: set.setName });
+            await axios.post("https://memor-ease.onrender.com/sets", { userId: uid, setName: set.setName });
             window.location.reload();
         } catch (err) {
             console.log(err);
@@ -189,7 +189,7 @@ const Sets = () => {
     useEffect(() => {
         const fetchAllSets = async () => {
             try {
-                const res = await axios.get(`http://localhost:8800/sets/${uid}`)
+                const res = await axios.get(`https://memor-ease.onrender.com/sets/${uid}`)
                 setSets(res.data);
                 console.log(res)
             } catch(err) {

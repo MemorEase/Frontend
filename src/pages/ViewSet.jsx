@@ -14,7 +14,7 @@ function ViewSet() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://localhost:8800/cards/${getSetId}`)
+    axios.get(`https://memor-ease.onrender.com/cards/${getSetId}`)
       .then(response => {
         setCards(response.data);
         const initialChanges = {};

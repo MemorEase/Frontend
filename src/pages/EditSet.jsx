@@ -13,7 +13,7 @@ function EditSet() {
   const [cardChanges, setCardChanges] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:8800/cards/' + getSetId)
+    axios.get('https://memor-ease.onrender.com/cards/' + getSetId)
       .then(response => {
         setCards(response.data);
         const initialChanges = {};
@@ -37,7 +37,7 @@ function EditSet() {
     try {
       for (const cardId in cardChanges) {
         const changedCard = cardChanges[cardId];
-        await axios.put(`http://localhost:8800/cards/${cardId}`, changedCard);
+        await axios.put(`https://memor-ease.onrender.com/cards/${cardId}`, changedCard);
       }
       console.log('Changes saved successfully');
       window.location.reload();
@@ -48,7 +48,7 @@ function EditSet() {
 
   const makeNewCard = async () => {
     try {
-      const response = await axios.post("http://localhost:8800/cards", { setId: getSetId, key: "", value: "" });
+      const response = await axios.post("https://memor-ease.onrender.com/cards", { setId: getSetId, key: "", value: "" });
 
       setCards(prev => [...prev, response.data]);
       window.location.reload();
@@ -59,7 +59,7 @@ function EditSet() {
 
   const handleDelete = async (cardId) => {
     try {
-      await axios.delete(`http://localhost:8800/cards/${cardId}`);
+      await axios.delete(`https://memor-ease.onrender.com/cards/${cardId}`);
       setCards(prev => prev.filter(card => card.cardId !== cardId));
     } catch (error) {
       console.error('Error deleting card:', error);
