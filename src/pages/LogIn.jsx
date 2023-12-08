@@ -23,7 +23,7 @@ const LogIn = () => {
     return (
         <>
         <div className='sign-in-container d-flex justify-content-center align-items-center bg-primary vh-100'>
-            <div className='bg-white p-3 rounded w-25'>
+            <div className='bg-white p-3 rounded w-100 w-md-50 w-lg-25'>
                 <form onSubmit={logIn}>
                     <h1 class="mb-3">Log In</h1>
                     <div className='mb-3'>

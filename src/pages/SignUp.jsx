@@ -22,7 +22,7 @@ const SignUp = () => {
 
     return (
         <div className='sign-in-container d-flex justify-content-center align-items-center bg-primary vh-100'>
-            <div className='bg-white p-3 rounded w-25'>
+            <div className='bg-white p-3 rounded w-100 w-md-50 w-lg-25'>
             <form onSubmit={signUp}>
             <h1 class="mb-3">Sign Up</h1>
                     <div className='mb-3'>
